@@ -1,0 +1,18 @@
+.theHeader {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  padding-inline: 2rem;
+  background-color: #2e2e2e;
+  justify-content: space-between;
+}
+
+.linksItems {
+  gap: 2rem;
+  display: flex;
+}
+
+.link {
+  color: #fff;
+  font-weight: 600;
+}
