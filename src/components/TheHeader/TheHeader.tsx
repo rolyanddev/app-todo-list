@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 
 import styles from './TheHeader.module.css'
-import reactLogo from '../assets/react.svg'
+import reactLogo from '@/assets/react.svg'
 
-const TheHeader = () => {
+export const TheHeader = () => {
   return (
     <header className={styles.theHeader}>
       <img src={reactLogo} alt="react logo" width={50} height={50} />
@@ -27,5 +27,3 @@ const TheHeader = () => {
     </header>
   )
 }
-
-export default TheHeader
