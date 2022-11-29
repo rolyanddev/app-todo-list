@@ -16,3 +16,11 @@ a {
 li {
   list-style: none;
 }
+
+img {
+  display: block;
+}
+
+input {
+  outline: none;
+}

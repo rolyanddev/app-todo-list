@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { Home } from '@/pages/Home'
-import { About } from '@/pages/About'
-import { DefaultLayout } from '@/layouts/default'
+import { CreateTodo } from '@/pages/CreateTodo'
+import { DefaultLayout } from '@/layouts/Default'
+import { Error } from '@/pages/Error'
 
 export const router = createBrowserRouter([
   {
@@ -13,8 +14,12 @@ export const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: 'about',
-        element: <About />
+        path: 'create-todo',
+        element: <CreateTodo />
+      },
+      {
+        path: '*',
+        element: <Error />
       }
     ]
   }

@@ -7,12 +7,12 @@
   justify-content: space-between;
 }
 
-.linksItems {
-  gap: 2rem;
-  display: flex;
-}
-
-.link {
+.theHeader__link {
   color: #fff;
   font-weight: 600;
+}
+
+.theHeader__linksItems {
+  gap: 2rem;
+  display: flex;
 }

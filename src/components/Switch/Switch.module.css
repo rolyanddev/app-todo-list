@@ -1,0 +1,58 @@
+.switch__wrapper {
+  gap: .5rem;
+  display: flex;
+  align-items: center;
+}
+
+.switch {
+  width: 40px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.switch__input {
+  display: none;
+}
+
+.switch__slider {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  transition: .4s;
+  position: absolute;
+  background-color: #ccc;
+}
+
+.switch__slider:before {
+  left: 4px;
+  content: "";
+  width: 13px;
+  height: 13px;
+  bottom: 4px;
+  transition: .4s;
+  position: absolute;
+  background-color: #fff;
+}
+
+.switch__input:checked+.switch__slider {
+  background-color: #00d8ff;
+}
+
+.switch__input:checked+.switch__slider:before {
+  transform: translateX(20px);
+}
+
+.switch__round {
+  border-radius: 20px;
+}
+
+.switch__round:before {
+  border-radius: 50%;
+}
+
+.switch__status {
+  cursor: pointer;
+}
