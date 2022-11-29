@@ -1,11 +1,8 @@
 import { useState } from 'react'
-import { IdTodo } from '@/interfaces/Todos'
+import { Todo } from '@/interfaces/Todos'
 import style from './Switch.module.css'
 
-interface Props {
-  id: IdTodo
-  done: boolean
-}
+type Props = Pick<Todo, 'id' | 'done'>
 
 export const Switch = ({ id, done }: Props) => {
   const [isChecked, setIsChecked] = useState(done)

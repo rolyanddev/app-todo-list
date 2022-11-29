@@ -1,18 +1,21 @@
+import { FormEvent, useState } from 'react'
 import style from './CreateTodo.module.css'
-import { todos } from '@/data'
-import { FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { todos } from '@/data'
 
 export const CreateTodo = () => {
+  const [valueTitle, setValueTitle] = useState('')
   const navigate = useNavigate()
+
+  const handleInput = (e: FormEvent<HTMLInputElement>) => {
+    const { value } = e.currentTarget
+    setValueTitle(value)
+  }
 
   const createTodo = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const formData = new FormData(e.currentTarget)
-    const { title } = Object.fromEntries(formData) as { title: string }
     const idFake = new Date().getTime().toString()
-    todos.push({ id: idFake, title, done: false })
-    e.currentTarget.reset()
+    todos.push({ id: idFake, title: valueTitle, done: false })
     navigate('/')
   }
 
@@ -23,6 +26,7 @@ export const CreateTodo = () => {
         <input
           type="text"
           name="title"
+          onInput={handleInput}
           className={style.createTodo__input}
           placeholder="Write the title of the task"
         />

@@ -6,13 +6,13 @@ interface Props {
   todo: Todo
 }
 
-export const Card = ({ todo }: Props) => {
+export const Card = ({ todo: { id, done, title } }: Props) => {
   return (
     <article className={style.card}>
-      <h2 className={style.card__title} title={todo.title}>
-        {todo.title}
+      <h2 className={style.card__title} title={title}>
+        {title}
       </h2>
-      <Switch id={todo.id} done={todo.done} />
+      <Switch id={id} done={done} />
     </article>
   )
 }

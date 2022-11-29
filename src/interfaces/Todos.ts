@@ -1,8 +1,7 @@
 export type Todos = Todo[]
-export type IdTodo = number | string
 
 export interface Todo {
-  id: IdTodo
+  id: string
   done: boolean
   title: string
 }

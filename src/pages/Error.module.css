@@ -1,0 +1,23 @@
+.error {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error__title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.error__button {
+  width: 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: .8rem;
+  max-width: 150px;
+  font-weight: 600;
+  text-align: center;
+  padding: .6rem 2rem;
+  background-color: #2e2e2e;
+}
