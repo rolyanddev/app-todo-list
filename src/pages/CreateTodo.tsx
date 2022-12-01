@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react'
 import style from './CreateTodo.module.css'
 import { useNavigate } from 'react-router-dom'
-import { todos } from '@/data'
+import { createNewTodo } from '@/services'
 
 export const CreateTodo = () => {
   const [valueTitle, setValueTitle] = useState('')
@@ -14,8 +14,7 @@ export const CreateTodo = () => {
 
   const createTodo = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const idFake = new Date().getTime().toString()
-    todos.push({ id: idFake, title: valueTitle, done: false })
+    createNewTodo({ title: valueTitle, done: false })
     navigate('/')
   }
 

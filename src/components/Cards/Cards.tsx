@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 import { Todos } from '@/interfaces/Todos'
 import { Card } from '@/components/Card'
 import style from './Cards.module.css'
-import { todos } from '@/data'
+import { getTodos } from '@/services'
 
 export const Cards = () => {
   const [allTodos, setAllTodos] = useState<Todos>([])
 
   useEffect(() => {
-    setAllTodos(todos)
+    setAllTodos(getTodos())
   }, [])
 
   return (

@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import { Todo } from '@/interfaces/Todos'
 import style from './Switch.module.css'
+import { updateTodo } from '@/services'
 
 type Props = Pick<Todo, 'id' | 'done'>
 
 export const Switch = ({ id, done }: Props) => {
   const [isChecked, setIsChecked] = useState(done)
 
-  const toggleChecked = () => setIsChecked(!isChecked)
+  const toggleChecked = () => {
+    updateTodo(id, { done: !isChecked })
+    setIsChecked(!isChecked)
+  }
 
   return (
     <div className={style.switch__wrapper}>

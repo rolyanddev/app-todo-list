@@ -1,7 +1,18 @@
 .card {
   padding: 1rem;
+  transition: .2s;
+  overflow: hidden;
+  position: relative;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
     rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card:hover .card__buttonDelete {
+  visibility: visible;
 }
 
 .card__title {
@@ -9,4 +20,23 @@
   white-space: nowrap;
   margin-bottom: 1rem;
   text-overflow: ellipsis;
+}
+
+.card__buttonDelete {
+  top: 0;
+  right: 0;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: .2s;
+  font-weight: 600;
+  position: absolute;
+  visibility: hidden;
+  padding: .2rem .4rem;
+  font-family: inherit;
+  background-color: #ccc;
+}
+
+.card__buttonDelete:hover {
+  background-color: red;
 }
